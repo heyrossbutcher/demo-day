@@ -1,0 +1,6 @@
+wp-config.php
+wp-config-prod.php
+node_modules/
+wp-admin/
+wp-includes/
+license.txt
