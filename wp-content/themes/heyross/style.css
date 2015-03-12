@@ -141,7 +141,8 @@ html {
   clear: both; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
 
 /* Global Classes / Wordpress Specific */
 .aligncenter {
@@ -172,7 +173,8 @@ body {
   color: #333; }
 
 .container {
-  max-width: 1200px;
+  max-width: 100%;
+  height: 100%;
   margin: 0 auto; }
 
 .content {
@@ -482,3 +484,113 @@ p.form-allowed-tags, .nocomments {
 .examples {
   border: 1px solid #999;
   margin-bottom: 25px; }
+
+/*//////////////////////////////////////////////////
+////////////////////////////////////////////////////
+/////MIXINS
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+.main {
+  height: 90vh; }
+
+footer {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  border: 2px solid black;
+  background-color: black;
+  color: white; }
+
+/*//////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////
+/////CUSTOM STYLING - FRONT PAGE
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+.selects-holder {
+  width: 90%;
+  float: left;
+  color: white; }
+  .selects-holder .select-holder {
+    width: 70%;
+    height: 350px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+    background: #333;
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    border-radius: 10px; }
+
+.portfolios-nav {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-70%);
+  width: 10%; }
+  .portfolios-nav .portfolio-nav {
+    width: 30px;
+    height: 30px;
+    margin: 15px auto;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
+    color: transparent; }
+
+/*//////////////////////////////////////////////////
+////////////////////////////////////////////////////
+/////CUSTOM STYLING - SINGLE PAGE
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+.portfolio-upclose {
+  width: 100%;
+  height: 100%; }
+
+.ex-holder {
+  float: left;
+  width: 75%;
+  height: 100%;
+  background: goldenrod; }
+
+.info-holder {
+  float: left;
+  width: 25%;
+  height: 100%;
+  background: mistyrose;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
+  .info-holder .info-holder-title {
+    border: 1px solid transparent;
+    height: 10%; }
+  .info-holder .info-holder-code {
+    height: 85%; }
+  .info-holder .desc {
+    background: pink; }
+  .info-holder .js {
+    background: yellow; }
+  .info-holder .html {
+    background: red; }
+  .info-holder .css {
+    background: blue; }
+
+.code-nav {
+  height: 5%;
+  background: white;
+  border-top: 1px solid black; }
+  .code-nav .nav-item-desc, .code-nav .nav-item-js, .code-nav .nav-item-html, .code-nav .nav-item-css {
+    padding: 5px;
+    float: left;
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    text-align: left; }
+  .code-nav .nav-item-css {
+    border-right: none; }
+
+.hide {
+  display: none; }
+
+.current-selection {
+  background: black;
+  color: white; }

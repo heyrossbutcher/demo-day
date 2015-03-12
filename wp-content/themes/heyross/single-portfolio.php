@@ -3,35 +3,47 @@
 <div class="main">
   <div class="container">
 
-    <div class="content">
+    <div class="content portfolio-upclose">
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
         
-        <h2><?php the_title(); ?></h2>
-        <p><strong>Client name: </strong><?php the_field('client_name'); ?></p>
-        <p><?php the_field('short_desc') ?></p>
-
-        <div class="images">
-            <?php while(has_sub_field('images')) : ?>
-              <div class="examples">
-                  <?php //for every image caption combo, this code is run ?>
-                  <figure>
-                    <?php 
-                       $image = get_sub_field('image');
-                       // pre_r($image); 
-                     ?>
-                     <img src="<?php echo $image['sizes']['square']; ?>" alt="<?php echo $image['title'] ?>">
-                    <figcaption>
-                      <?php the_sub_field('caption') ?>
-                    </figcaption>
-                  </figure>
-                  <div class="btn">
-                   <a href="<?php the_sub_field('site_link') ?>" target="blank">
-                      <?php the_field('click_through_button') ?>
-                    </a>
-                  </div>
-              </div>
-            <?php endwhile //end images loop ?>
+        <div class="ex-holder">
+            kdkdkdk          
         </div>
+
+        <div class="info-holder">
+          <div class="info-holder-title">
+            <h2><?php the_title(); ?></h2>
+          </div>
+          <div class="code-nav">
+            <div class="nav-item-desc current-selection">
+              Info
+            </div>
+            <div class="nav-item-js">
+              JS
+            </div>
+            <div class="nav-item-html">
+              HTML
+            </div>
+            <div class="nav-item-css">
+              CSS
+            </div>
+
+          </div>
+          <div class="info-holder-code desc">
+            <?php the_field('full_description');  //Get the JavaScript ?>
+          </div>
+          <div class="info-holder-code js hide">
+            <?php the_field('javascript_code');  //Get the JavaScript ?>
+          </div>
+          <div class="info-holder-code html hide">
+            <?php the_field('html_code');  //Get the HTML ?>
+          </div>
+          <div class="info-holder-code css hide">
+            <?php the_field('css');  //Get the CSS code ?>
+          </div>
+
+        </div>
+        
 
         <?php //the_content(); ?>
 

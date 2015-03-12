@@ -20,7 +20,7 @@ get_header();  ?>
 	<?php //we are going to pull in the latest blog posts ?>
 	<?php $latestPosts = new wp_query(array(
 		'post_type' => 'portfolio',//we only want blog posts
-		'posts_per_page' => 3
+		'posts_per_page' => 4
 	)) ?>
 
 	<?php if($latestPosts->have_posts()) while($latestPosts->have_posts()) : $latestPosts->the_post() ?>

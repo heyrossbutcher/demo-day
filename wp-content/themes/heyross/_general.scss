@@ -1,0 +1,169 @@
+//IMPORT MIXINS
+@import 'mixins';
+///////////////////////////////////////
+//MAIN
+///////////////////////////////////////
+.main{
+  height: 90vh;
+}
+///////////////////////////////////////
+//FOOTER
+///////////////////////////////////////
+footer{
+  //Position
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  bottom:0;
+  //Style
+  border: 2px solid black;
+  background-color: rgba(0,0,0,1);
+  //Text
+  color: rgba(255,255,255,1);
+}
+/*//////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////
+/////CUSTOM STYLING - FRONT PAGE
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+.selects-holder{
+  //Position
+  width: 90%;
+  float: left;
+  // margin-top: -2000px;
+  // padding: 0 50px;
+  //Style
+  color: rgba(255,255,255,1);
+  .select-holder{
+    //Position
+    // float: left;
+    width: 70%;
+    height: 350px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+    //Style
+    background: #333;
+    border: 2px solid rgba(0,0,0,0.7);
+    border-radius: 10px;
+  }
+  //
+  // .select-holder:last-child{
+  //   margin-bottom: 0;
+  // }
+}
+.portfolios-nav{
+  //Position
+  position: fixed;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-70%);
+  width: 10%;
+  //Style
+  .portfolio-nav{
+    //Position
+    width: 30px;
+    height: 30px;
+    margin: 15px auto;
+    text-align: center;
+    //Style
+    border: 2px solid $tr_white;
+
+    border-radius: 50%;
+    background: $tr_white;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+    //Text
+    color: rgba(0,0,0,0);
+  }
+}
+/*//////////////////////////////////////////////////
+////////////////////////////////////////////////////
+/////CUSTOM STYLING - SINGLE PAGE
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+.portfolio-upclose{
+  width: 100%;
+  height: 100%;
+}
+.ex-holder{
+  //Postion
+  float: left;
+  width: 75%;
+  height: 100%;
+  //Style
+  background: goldenrod;
+  //Text
+}
+
+.info-holder{
+  //Postion
+  float: left;
+  width: 25%;
+  height: 100%;
+  //Style
+  background: mistyrose;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+  //Text
+
+  //Nested
+  .info-holder-title{
+    border: 1px solid rgba(0,0,0,0);
+    height: 10%;
+  }
+  .info-holder-code{
+    // border: 1px solid #000;
+    height: 85%;
+  }
+  .desc{
+    background: pink;
+  }
+  .js{
+    background: yellow;
+  }
+  .html{
+    background: red;
+  }
+  .css{
+    background: blue;
+  }
+
+}
+.code-nav{
+  //Position
+  height: 5%;
+  //Style
+  background: rgba(255,255,255,1);
+  border-top: 1px solid rgba(0,0,0,1);
+  //Text
+  //Nested
+  .nav-item-desc, .nav-item-js, .nav-item-html, .nav-item-css {
+    //Position
+    padding: 5px;
+    float: left;
+    width: 25%;
+    height: 100%;
+    //Style
+    display: inline-block;
+    border-right:1px solid rgba(0,0,0,0.4);
+    //Text
+    text-align: left;
+    //Nested
+  }
+  .nav-item-css {
+    border-right: none;
+  }
+}
+///////////////////////////////////////
+//GLOBAL & SCRIPT SPECIFIC STYLING
+///////////////////////////////////////
+.video{
+  // background: mistyrose;
+}
+.hide{
+  display: none;
+}
+.current-selection{
+  background: rgba(0,0,0,1);
+  color: rgba(255,255,255,1);
+}

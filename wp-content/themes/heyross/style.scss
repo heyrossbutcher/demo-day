@@ -28,6 +28,7 @@ html{
 
 img {
   max-width:100%;
+  height: auto;
 }
 
 /* Global Classes / Wordpress Specific */
@@ -50,7 +51,8 @@ body {
 }
 
 .container {
-  max-width:1200px;
+  max-width:100%;
+  height: 100%;
   margin:0 auto;
 }
 
@@ -338,3 +340,6 @@ p.form-allowed-tags, .nocomments { display:none; }
   border: 1px solid #999;
   margin-bottom: 25px;
 }
+//IMPORT CUSTOM STYLES
+@import 'general';
+
