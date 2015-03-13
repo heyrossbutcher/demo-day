@@ -13,7 +13,7 @@ function theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
 	add_image_size('square', 150, 150, true);
-	add_image_size('portfolio', 800, 1500, false);
+	add_image_size('portfolio', 1500, 840, false);
 
 	function pw_show_image_sizes($sizes) {
     $sizes['square'] = 'Square Image';
