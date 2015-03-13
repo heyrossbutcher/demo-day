@@ -20,7 +20,6 @@ get_header();  ?>
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<h2><?php the_title(); ?></h2>
 		      <?php the_content(); ?>
-		      <div id ="#1"></div>
 			<?php endwhile; ?><!-- //end custom loop -->
 		</div>
 
@@ -39,21 +38,28 @@ get_header();  ?>
 			<?php //LOAD IN THE PORTFOLIO PIECES ?>
 				<div class="select-holder piece<?php the_field('nav_select');  ?>">
 
-	                 <?php //pre_r($post); ?>
-				     <?php $postid = get_the_ID(); //Get the portfolio piece id?>
+	                <?php //pre_r($post); ?>
+				    
+				    <?php $postid = get_the_ID(); //Get the portfolio piece id?>
+					
+					<div class="title hide clearfix">
+						<div class="name">
+							<?php the_field('project_title');  //Project title ?> 
+						</div>
+						<div class="tech">
+			                 <?php the_terms($post->ID, 'technologies','- - ','  |  ', ' - -');  //Load the tech categories ?>
+						</div>
+					</div>
 
-					 <?php the_field('project_title');  //Project title ?> 
+					<?php $image = get_field('screenshot');  //Get the image for processing ?>
 
-				 	<?php $image = get_field('screenshot');  //Get the image for processing ?>
+					<?php the_field('excerpt_description');  //Get the image ?>
+
 					
 					 <a href="<?php echo get_permalink( $postid ); //Get Portfolio Piece Link ?>">
 					 	<img src="<?php echo $image['sizes']['medium']; //Print the screenshot?>" alt="<?php echo $image['title'] ?>">
 				     </a>
-				     <div id="#<?php the_field('nav_select');  ?>"></div>
-
-				     <?php the_field('excerpt_description');  //Get the image ?>
 				     
-	                 <?php the_terms($post->ID, 'technologies','- - ','  |  ', ' - -');  //Load the tech categories ?>
 				</div>
 
 			<?php endwhile; ?><!-- //end custom loop -->

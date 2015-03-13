@@ -31,13 +31,11 @@ footer{
   //Position
   width: 90%;
   float: left;
-  // margin-top: -2000px;
-  // padding: 0 50px;
+  margin-bottom: 100px;
   //Style
   color: rgba(255,255,255,1);
   .select-holder{
     //Position
-    // float: left;
     width: 70%;
     height: 350px;
     margin: 0 auto;
@@ -46,11 +44,29 @@ footer{
     background: #333;
     border: 2px solid rgba(0,0,0,0.7);
     border-radius: 10px;
+    opacity: 0.7;
+    box-shadow: 0 0 5px rgba(0,0,0,0);
+    //Transform
+    transform: scale(0.5);
+    transition: all 1s cubic-bezier(0.730, -0.600, 0.320, 1.650);
+    .title{
+      //Position
+      display: block;
+      padding: 15px 20px;
+      //Style
+      background: rgba(0,0,0,1);
+      //Text
+      color: rgba(255,255,255,1);
+      font-size: 2rem;
+      .name{
+        float: left;
+      }
+      .tech{
+        float: right; 
+      }
+    }
   }
   //
-  // .select-holder:last-child{
-  //   margin-bottom: 0;
-  // }
 }
 .portfolios-nav{
   //Position
@@ -161,9 +177,16 @@ footer{
   // background: mistyrose;
 }
 .hide{
-  display: none;
+  display: none!important;
 }
 .current-selection{
   background: rgba(0,0,0,1);
   color: rgba(255,255,255,1);
+}
+.scale{
+  transform: scale(1)!important;
+  height: 85vh!important;
+  width: 85%!important;
+  opacity: 1!important;
+  box-shadow: 2px 2px  10px rgba(0,0,0,0.4)!important;
 }

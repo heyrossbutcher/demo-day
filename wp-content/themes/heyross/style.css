@@ -511,6 +511,7 @@ footer {
 .selects-holder {
   width: 90%;
   float: left;
+  margin-bottom: 100px;
   color: white; }
   .selects-holder .select-holder {
     width: 70%;
@@ -519,7 +520,24 @@ footer {
     margin-bottom: 250px;
     background: #333;
     border: 2px solid rgba(0, 0, 0, 0.7);
-    border-radius: 10px; }
+    border-radius: 10px;
+    opacity: 0.7;
+    box-shadow: 0 0 5px transparent;
+    -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transition: all 1s cubic-bezier(0.73, -0.6, 0.32, 1.65);
+            transition: all 1s cubic-bezier(0.73, -0.6, 0.32, 1.65); }
+    .selects-holder .select-holder .title {
+      display: block;
+      padding: 15px 20px;
+      background: black;
+      color: white;
+      font-size: 2rem; }
+      .selects-holder .select-holder .title .name {
+        float: left; }
+      .selects-holder .select-holder .title .tech {
+        float: right; }
 
 .portfolios-nav {
   position: fixed;
@@ -589,8 +607,17 @@ footer {
     border-right: none; }
 
 .hide {
-  display: none; }
+  display: none !important; }
 
 .current-selection {
   background: black;
   color: white; }
+
+.scale {
+  -webkit-transform: scale(1) !important;
+      -ms-transform: scale(1) !important;
+          transform: scale(1) !important;
+  height: 85vh !important;
+  width: 85% !important;
+  opacity: 1 !important;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4) !important; }

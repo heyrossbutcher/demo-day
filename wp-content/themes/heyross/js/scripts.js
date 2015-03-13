@@ -32,67 +32,144 @@ info.setInfomenu = function(){
 //Create click functions for the side nav
 info.click_nav = function(p){
 	$('.nav'+ p).on('click', function(){
-		//
+		console.log('I\'m clicked!!!!!!!!!!!!');
 		info.height_checker(p);
-		info.whatPiece = p;
+		
+		// info.whatPiece = p;
  	});
 };
 //Create button functions for the side nav
 info.side_nav = function(){
 	for (i = 1; i <= info.divs; i++) {
-		// console.log('nav' + i);
+		console.log('nav' + i);
 		info.click_nav(i);
+		$('.nav' + i).attr('data-num', i);
+		// info.scale(i);
 	}
 };
+//Get's window height, retuens offsets does positioning math
 info.height_checker = function(p){
-
 	info.mt_calc = (info.port_height*p)-info.port_height; //Take the height of window and do the math to assign to each portfolio piece
- 
- 	info.mt_hldr = (-Math.abs(info.mt_calc))+info.marker - info.div_offset; //Takes the assigned the number and centers in the page
+ 	info.mt_hldr = info.mt_calc; //Takes the assigned the number and centers in the page
+	$('html, body').animate( {scrollTop: info.mt_hldr + 'px'}, 1050, 'swing' ); //Moves the div holding the portfolio pieces
+	console.log('What is this ' + info.mt_hldr);
+};
 
-	$('.selects-holder').animate( {marginTop : info.mt_hldr + 'px'}, 1000, 'swing' ); //Moves the div holding the portfolio pieces
-	// console.log('What is this ' + info.mt_hldr);
-}
-/////////////////////////////////////////////////////////////
-// DOCUMENT READY CODE
-/////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
-// WINDOW VARIABLES
-/////////////////////////////////////////////////////////////
+//Get all the window and offsets data
 info.get_window_data = function(){ 
 	info.windowHeight = $(window).height();
-	// info.scrollPercentage =  (info.scrollHeight / info.windowHeight).toFixed(2);
-	// console.log('Scrollheight: ' + info.scrollPercentage);
-	info.marker = info.windowHeight/2;
-	info.footerOffset = info.windowHeight/10;
-	info.div_offset = (( $('.select-holder').height() )/2) + info.footerOffset;
-	console.log(info.div_offset);
-	//your jQuery here
-	info.setInfomenu();
 	//
+	info.piece_height = 650;
 	info.port_height = 600; //what the individual pieces were set to
-	info.div_hgt = $('.selects-holder').height();//Portfolio holder height
+	//
+	info.div_hgt = $(document).height();//Portfolio holder height
 	info.divs = info.div_hgt/info.port_height;
+	info.footerOffset = info.windowHeight/20;
 	//
-	// console.log('Div holder height is: ' + info.div_hgt);
-	// console.log('This is the number of cells: ' + info.divs);
-	//
-	info.side_nav();
-}
-$(function(){
-	info.get_window_data();
+	info.initialPlace = ((info.windowHeight - info.piece_height) / 2) - info.footerOffset;
+	// $('.selects-holder').css('marginTop', info.initialPlace);
+	info.get_scroll_data();
+};
 
-	$(window).on('resize', function(){
-		info.scrollHeight = $(window).scrollTop();info.windowHeight = $(window).height();
-		info.scrollHeight = $(window).scrollTop();
-		info.marker = info.windowHeight/2;
-		// var h = window.innerHeight;
-		// console.log($(this).scrollTop() + ' !!!!!!!!!!!!!!!');
-		// console.log('This is the window height: ' + h);
+//
+info.get_scroll_data = function(){
+	info.st = $(window).scrollTop();
+    info.dh = $(document).height();
+    info.scrollPercent = (info.st / (info.dh-info.windowHeight)) * 100;
+	// console.log("Scroll percent: " + info.scrollPercent);
+};
+//Scroll jacking
+info.moveit = function(t) {
+	// $(document).on('scrollstop', function(){
+			info.timeOut = setTimeout(function(){ 
+				info.height_checker(t); 
+			},500);
+	// });
 		//
-		//Getting the scroll percentage
-		
-	});
+	// $(document).on('scroll', function(){
+		clearTimeout(info.timeOut);
+	// });
+};
 
+
+//Scaling functionality    data-num
+info.scale = function(){
+	info.get_rnd_num = (info.div_hgt-info.st) / info.port_height ;
+	info.get_num =  info.divs - info.get_rnd_num; 
 	//
+	info.low_pt = (info.divs - info.get_rnd_num);
+	info.high_pt = Math.round(info.divs - info.get_rnd_num);
+	//
+	// info.prod = '.piece' + Math.ceil(info.get_num);
+	if( info.low_pt > -0.8 && info.high_pt < 1){
+		$('.piece1').addClass('scale');
+		$('.piece1 .title').removeClass('hide');
+		info.moveit(1);	
+		//
+	}else{
+		$('.piece1').removeClass('scale');
+		$('.piece1 .title').addClass('hide');
+	}
+	//
+	if( info.low_pt >= 0.8 && info.high_pt <= 1.75){
+		$('.piece2').addClass('scale');
+		$('.piece2 .title').removeClass('hide');
+		info.moveit(2);	
+		//
+	}else{
+		$('.piece2').removeClass('scale');
+		$('.piece2 .title').addClass('hide');
+	}
+	//
+	if( info.low_pt >= 1.8 && info.high_pt <= 2.75){
+		$('.piece3').addClass('scale');
+		$('.piece3 .title').removeClass('hide');
+		info.moveit(3);	
+		//
+	}else{
+		$('.piece3').removeClass('scale');
+		$('.piece3 .title').addClass('hide');
+	}
+	//
+	if( info.low_pt >= 2.5 && info.high_pt <= 4){
+		$('.piece4').addClass('scale');
+		$('.piece4 .title').removeClass('hide');
+		info.moveit(4);	
+		//
+	}else{
+		$('.piece4').removeClass('scale');
+		$('.piece4 .title').addClass('hide');
+	}
+	//
+
+	// console.log('This is the low point: ' + info.low_pt);
+	// console.log('This is the high point: ' + info.high_pt);
+	// console.log('This is piece: ' + info.prod);
+
+};
+/////////////////////////////////////////////////////////////
+// DOCUMENT READY
+/////////////////////////////////////////////////////////////
+$(function() {
+	//Single page
+	info.setInfomenu();
+	//front page
+	info.get_window_data();
+	info.side_nav();
+	
+	//
+	// console.log('Get key: ' + info.div_hgt/info.windowHeight);
 });
+//
+$(window).on('resize', function(){
+	info.get_window_data();
+});
+//
+$(window).on('scroll', function(){
+	info.get_scroll_data();
+	info.scale();
+	info.moveit(info.setter);
+	// console.log('This is the scrollTop: ' + info.st);
+});
+	
+
