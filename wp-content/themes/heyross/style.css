@@ -174,7 +174,6 @@ body {
 
 .container {
   max-width: 100%;
-  height: 100%;
   margin: 0 auto; }
 
 .content {
@@ -491,7 +490,9 @@ p.form-allowed-tags, .nocomments {
 ///////////////////////////////////////////////////
 //////////////////////////////////////////////////*/
 .main {
-  height: 90vh; }
+  width: 100%;
+  height: 3840px;
+  background: mistyrose; }
 
 footer {
   width: 100%;
@@ -507,104 +508,84 @@ footer {
 /////CUSTOM STYLING - FRONT PAGE
 ///////////////////////////////////////////////////
 //////////////////////////////////////////////////*/
-.selects-holder {
-  width: 90%;
-  float: left;
-  margin-bottom: 750px;
-  color: white; }
-  .selects-holder .select-holder {
-    width: 70%;
-    height: 350px;
-    margin: 0 auto;
-    margin-bottom: 290px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 20px;
-    opacity: 0.7;
-    -webkit-transform: scale(0.5);
-        -ms-transform: scale(0.5);
-            transform: scale(0.5);
-    transition: all 1s cubic-bezier(0.73, -0.25, 0.32, 1.25);
-    -webkit-transition: all 1s cubic-bezier(0.73, -0.25, 0.32, 1.25);
-    -moz-transition: all 1s cubic-bezier(0.73, -0.25, 0.32, 1.25); }
-    .selects-holder .select-holder .title {
+.select-holder {
+  width: 35vw;
+  height: 50vh;
+  margin: 0 auto;
+  position: fixed;
+  top: 150vh;
+  left: 25vw;
+  background: goldenrod;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  opacity: 0.5;
+  -ms-transform: scale(1);
+      transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transition: all 1s cubic-bezier(0.73, -0.15, 0.32, 1.25);
+  -webkit-transition: all 1s cubic-bezier(0.73, -0.15, 0.32, 1.25);
+  -moz-transition: all 1s cubic-bezier(0.73, -0.15, 0.32, 1.25); }
+  .select-holder .wrap {
+    width: 45%; }
+    .select-holder .wrap .tech {
+      font-size: 1.4rem;
+      color: black;
+      padding: 7px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      float: left; }
+      .select-holder .wrap .tech p {
+        margin: 0;
+        padding: 0; }
+      .select-holder .wrap .tech a {
+        color: black;
+        padding-bottom: 2px; }
+      .select-holder .wrap .tech a:hover {
+        border-bottom: 1px solid black; }
+  .select-holder .excerpt {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    width: 100%;
+    color: black;
+    background: white;
+    border-top: 7px solid black;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    float: left;
+    clear: both; }
+    .select-holder .excerpt .e_text {
+      float: left;
+      display: block;
+      padding-bottom: 15px; }
+  .select-holder .try_it_out {
+    margin-top: 15px; }
+    .select-holder .try_it_out a {
+      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+      font-size: 1.8rem;
+      display: inline;
+      padding: 10px 28px;
+      color: white;
+      background: black;
+      float: left;
+      display: block;
+      transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.75s ease; }
+    .select-holder .try_it_out a:hover {
+      border-bottom: 7px solid black;
       display: block;
       width: 100%;
+      padding: 15px 35px;
+      background: white;
+      color: black; }
+    .select-holder .try_it_out a:active {
       color: white;
-      font-size: 2rem;
-      opacity: 1;
-      transition: all 0.5s ease;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease; }
-      .selects-holder .select-holder .title .name {
-        width: 100%;
-        display: block;
-        font-size: 4rem;
-        background: black;
-        float: left;
-        padding: 30px 40px 30px 30px;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4); }
-      .selects-holder .select-holder .title .wrap {
-        width: 45%; }
-        .selects-holder .select-holder .title .wrap .tech {
-          font-size: 1.4rem;
-          color: black;
-          padding: 7px 0;
-          border-top: 1px solid rgba(0, 0, 0, 0.2);
-          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-          float: left; }
-          .selects-holder .select-holder .title .wrap .tech p {
-            margin: 0;
-            padding: 0; }
-          .selects-holder .select-holder .title .wrap .tech a {
-            color: black;
-            padding-bottom: 2px; }
-          .selects-holder .select-holder .title .wrap .tech a:hover {
-            border-bottom: 1px solid black; }
-      .selects-holder .select-holder .title .excerpt {
-        font-size: 1.4rem;
-        line-height: 1.5;
-        width: 100%;
-        color: black;
-        background: white;
-        border-top: 7px solid black;
-        margin-top: 30px;
-        margin-bottom: 5px;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
-        padding: 30px;
-        float: left;
-        clear: both; }
-        .selects-holder .select-holder .title .excerpt .e_text {
-          float: left;
-          display: block;
-          padding-bottom: 15px; }
-      .selects-holder .select-holder .title .try_it_out {
-        margin-top: 15px; }
-        .selects-holder .select-holder .title .try_it_out a {
-          box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
-          font-size: 1.8rem;
-          display: inline;
-          padding: 10px 28px;
-          color: white;
-          background: black;
-          float: left;
-          display: block;
-          transition: all 0.3s ease;
-          -webkit-transition: all 0.3s ease;
-          -moz-transition: all 0.75s ease; }
-        .selects-holder .select-holder .title .try_it_out a:hover {
-          border-bottom: 7px solid black;
-          display: block;
-          width: 100%;
-          padding: 15px 35px;
-          background: white;
-          color: black; }
-        .selects-holder .select-holder .title .try_it_out a:active {
-          color: white;
-          background: black; }
+      background: black; }
 
 .portfolios-nav {
   position: fixed;
@@ -616,13 +597,35 @@ footer {
   .portfolios-nav .portfolio-nav {
     width: 30px;
     height: 30px;
-    margin: 15px auto;
+    margin: 20px auto;
     text-align: center;
     border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
-    color: transparent; }
+    color: transparent;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    transition: all 0.5s cubic-bezier(0.73, -0.45, 0.32, 1.95);
+    -webkit-transition: all 0.5s cubic-bezier(0.73, -0.45, 0.32, 1.95);
+    -moz-transition: all 0.5s cubic-bezier(0.73, -0.45, 0.32, 1.95); }
+    .portfolios-nav .portfolio-nav:hover {
+      background: rgba(50, 50, 50, 0.5);
+      border: 8px solid white;
+      -webkit-transform: scale(1.4);
+          -ms-transform: scale(1.4);
+              transform: scale(1.4);
+      color: #fff; }
+
+.current_state {
+  background: rgba(250, 250, 250, 0.5) !important;
+  border: 8px solid white !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset !important;
+  -webkit-transform: scale(1.2) !important;
+      -ms-transform: scale(1.2) !important;
+          transform: scale(1.2) !important;
+  color: #fff !important; }
 
 /*//////////////////////////////////////////////////
 ////////////////////////////////////////////////////
@@ -682,11 +685,23 @@ footer {
   color: white; }
 
 .scale {
-  -ms-transform: scale(1) !important;
-      transform: scale(1) !important;
-  -webkit-transform: scale(1) !important;
-  -moz-transform: scale(1) !important;
-  height: 85vh !important;
-  width: 100vw !important;
-  opacity: 1 !important;
-  border-radius: 0 !important; }
+  -ms-transform: scale(1);
+      transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  height: 85vh;
+  width: 100vw;
+  opacity: 1;
+  top: 0vh;
+  left: 0vw !important;
+  border-radius: 0; }
+
+.moveOn {
+  top: 0vh;
+  left: 25vw; }
+
+.moveUp {
+  top: -150vh; }
+
+.moveDown {
+  top: 150vh; }

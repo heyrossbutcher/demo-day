@@ -18,9 +18,7 @@ gulp.task('jshint', function() {
 
 gulp.task('styles', function() {
 	gulp.src('wp-content/themes/heyross/style.scss')
-		.pipe(sass({
-	  	"sourcemap=none": true
-	  }))
+		.pipe(sass({"sourcemap=none": true, errLogToConsole: true}))
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
 		.pipe(gulp.dest('wp-content/themes/heyross/'))
 		.pipe(rename({suffix: '.min'}))

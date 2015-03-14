@@ -7,7 +7,7 @@
 get_header();  ?>
 
 <div class="main">
-  <div class="container video clearfix">
+  <div class="container clearfix">
 
 	<?php //we are going to pull in the latest portfolio pieces ?>
 	<?php $aboutMe = new wp_query(array(
@@ -15,7 +15,6 @@ get_header();  ?>
 		'posts_per_page' => 1
 	)) ?>
 
-	<div class="selects-holder">
 		<div class="select-holder piece1">
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<h2><?php the_title(); ?></h2>
@@ -43,7 +42,7 @@ get_header();  ?>
 	                <?php //pre_r($post); ?>
 				    
 				    <?php $postid = get_the_ID(); //Get the portfolio piece id?>
-						<div class="title hide clearfix">
+						<!-- <div class="title hide clearfix"> -->
 							<div class="name">
 								<?php the_field('project_title');  //Project title ?> 
 							</div>
@@ -61,7 +60,7 @@ get_header();  ?>
 								</div>
 
 							</div>
-						</div>
+						<!-- </div> -->
 
 							<?php //pre_r($image) ?>
 							<?php //$tech = the_terms($post->ID, 'technologies') ?>
@@ -69,16 +68,15 @@ get_header();  ?>
 				</div>
 	
 			<?php endwhile; ?><!-- //end custom loop -->
-		</div>
 
 		<div class="portfolios-nav">
 				<div class="portfolio-nav nav1">
-					 1
+					 
 				</div>
 			<?php if($latestPosts->have_posts()) while($latestPosts->have_posts()) : $latestPosts->the_post() ?>
 				<?php //LOAD IN THE PORTFOLIO NAV CIRCLES ?>
 				<div class="portfolio-nav nav<?php the_field('nav_select');  //Project title ?> ">
-					 <?php the_field('nav_select');  //Project title ?> 
+					 <?php //the_field('nav_select');  //Project title ?> 
 				</div>
 
 			     <?php //the_terms($post->ID,'technologies'); ?>
