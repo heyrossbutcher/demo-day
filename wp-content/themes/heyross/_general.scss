@@ -12,7 +12,7 @@
 footer{
   //Position
   width: 100%;
-  height: 10vh;
+  height: 15vh;
   position: fixed;
   bottom:0;
   //Style
@@ -22,7 +22,6 @@ footer{
   color: rgba(255,255,255,1);
 }
 /*//////////////////////////////////////////////////
-//
 ////////////////////////////////////////////////////
 /////CUSTOM STYLING - FRONT PAGE
 ///////////////////////////////////////////////////
@@ -46,6 +45,7 @@ footer{
     background-position: center;  
     border-top: 1px solid rgba(0,0,0,0.05);
     border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-radius: 20px;
     opacity: 0.7;
     // box-shadow: 0 0 200px rgba(0,0,0,0.5) inset;
     //Transform
@@ -78,18 +78,14 @@ footer{
         box-shadow: 2px 0 10px rgba(0,0,0,0.4); 
       }
       .wrap{
-          width: 550px;
-          margin-left: 20px;
+          width: 45%;
+          // margin-left: 20px;
         .tech{
           font-size: 1.4rem;
-          background: black;
-          color: white;
-          // width: 100%;
-          margin-top: 10px;
-            // border: 1px solid black;
-            // border-left: 0;
-          padding: 7px 20px 7px 20px;
-          // box-shadow: 0 0 10px rgba(0,0,0,0.4); 
+          color: black;
+          padding: 7px 0;
+          border-top: 1px solid rgba(0,0,0,0.2);
+          border-bottom: 1px solid rgba(0,0,0,0.2);
           float: left;
           // clear: both; 
           p{
@@ -97,23 +93,23 @@ footer{
             padding: 0;
           }
           a{
-            color: rgba(200,200,200,1);
+            color: rgba(0,0,0,1);
             padding-bottom: 2px;
           }
           a:hover{
-            color: rgba(255,255,255,1);
-            border-bottom: 1px solid rgba(255,255,255,1);
+            border-bottom: 1px solid rgba(0,0,0,1);
           }
         }
       }
       .excerpt{
-          font-size: 1.6rem;
-          font-weight: thin;
-          line-height: 1.4;
-          width: 550px;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          width: 100%;
           color: black;
-          background: white;
+          background: rgba(255,255,255,1);
+          border-top: 7px solid black;
           margin-top: 30px;
+          margin-bottom: 5px;
           box-shadow: 2px 0 10px rgba(0,0,0,0.4); 
           padding: 30px;
           float: left;
@@ -121,18 +117,18 @@ footer{
           .e_text{
             float: left;
             display: block;
+            padding-bottom: 15px;
           }
       }
       .try_it_out{
-        // margin-left: 30px;
+        margin-top: 15px;
         a{
           box-shadow: 2px 5px 10px rgba(0,0,0,0.4); 
-          font-size: 1.6rem;
+          font-size: 1.8rem;
           display: inline;
-          padding: 10px 35px;
-          width: 140px;
+          padding: 10px 28px;
+          // width: 45%;
           color: rgba(255,255,255,1);
-          border-top: none;
           background: rgba(0,0,0,1);
           float: left;
           display: block;
@@ -141,12 +137,11 @@ footer{
           -moz-transition: all 0.75s ease;
         }
         a:hover{
+          border-bottom: 7px solid black;
           display: block;
-          width: 550px;
+          width: 100%;
           padding: 15px 35px;
-          font-size: 1.8rem;
           background: rgba(255,255,255,1);
-          border-top: 1px solid rgba(0,0,0,0.25);
           color: rgba(0,0,0,1);
         }
         a:active{
@@ -156,7 +151,6 @@ footer{
       }
     }
   }
-  //
 }
 .portfolios-nav{
   //Position
@@ -278,7 +272,8 @@ footer{
   transform: scale(1)!important;
   -webkit-transform: scale(1)!important;
   -moz-transform: scale(1)!important;
-  height: 90vh!important;
+  height: 85vh!important;
   width: 100vw!important;
   opacity: 1!important;
+  border-radius: 0!important;
 }

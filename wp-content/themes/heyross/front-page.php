@@ -57,7 +57,7 @@ get_header();  ?>
 									</div>
 								</div>
 								<div class="try_it_out">
-									<a href="<?php echo get_permalink( $postid ); //Get Portfolio Piece Link ?>">Try it out</a>
+									<a href="<?php echo get_permalink( $postid ); //Get Portfolio Piece Link ?>">Try it out -></a>
 								</div>
 
 							</div>

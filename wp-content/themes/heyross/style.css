@@ -495,7 +495,7 @@ p.form-allowed-tags, .nocomments {
 
 footer {
   width: 100%;
-  height: 10vh;
+  height: 15vh;
   position: fixed;
   bottom: 0;
   border: 2px solid black;
@@ -503,7 +503,6 @@ footer {
   color: white; }
 
 /*//////////////////////////////////////////////////
-//
 ////////////////////////////////////////////////////
 /////CUSTOM STYLING - FRONT PAGE
 ///////////////////////////////////////////////////
@@ -523,6 +522,7 @@ footer {
     background-position: center;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
     opacity: 0.7;
     -webkit-transform: scale(0.5);
         -ms-transform: scale(0.5);
@@ -548,64 +548,63 @@ footer {
         padding: 30px 40px 30px 30px;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4); }
       .selects-holder .select-holder .title .wrap {
-        width: 550px;
-        margin-left: 20px; }
+        width: 45%; }
         .selects-holder .select-holder .title .wrap .tech {
           font-size: 1.4rem;
-          background: black;
-          color: white;
-          margin-top: 10px;
-          padding: 7px 20px 7px 20px;
+          color: black;
+          padding: 7px 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
           float: left; }
           .selects-holder .select-holder .title .wrap .tech p {
             margin: 0;
             padding: 0; }
           .selects-holder .select-holder .title .wrap .tech a {
-            color: #c8c8c8;
+            color: black;
             padding-bottom: 2px; }
           .selects-holder .select-holder .title .wrap .tech a:hover {
-            color: white;
-            border-bottom: 1px solid white; }
+            border-bottom: 1px solid black; }
       .selects-holder .select-holder .title .excerpt {
-        font-size: 1.6rem;
-        font-weight: thin;
-        line-height: 1.4;
-        width: 550px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        width: 100%;
         color: black;
         background: white;
+        border-top: 7px solid black;
         margin-top: 30px;
+        margin-bottom: 5px;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
         padding: 30px;
         float: left;
         clear: both; }
         .selects-holder .select-holder .title .excerpt .e_text {
           float: left;
-          display: block; }
-      .selects-holder .select-holder .title .try_it_out a {
-        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
-        font-size: 1.6rem;
-        display: inline;
-        padding: 10px 35px;
-        width: 140px;
-        color: white;
-        border-top: none;
-        background: black;
-        float: left;
-        display: block;
-        transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.75s ease; }
-      .selects-holder .select-holder .title .try_it_out a:hover {
-        display: block;
-        width: 550px;
-        padding: 15px 35px;
-        font-size: 1.8rem;
-        background: white;
-        border-top: 1px solid rgba(0, 0, 0, 0.25);
-        color: black; }
-      .selects-holder .select-holder .title .try_it_out a:active {
-        color: white;
-        background: black; }
+          display: block;
+          padding-bottom: 15px; }
+      .selects-holder .select-holder .title .try_it_out {
+        margin-top: 15px; }
+        .selects-holder .select-holder .title .try_it_out a {
+          box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+          font-size: 1.8rem;
+          display: inline;
+          padding: 10px 28px;
+          color: white;
+          background: black;
+          float: left;
+          display: block;
+          transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.75s ease; }
+        .selects-holder .select-holder .title .try_it_out a:hover {
+          border-bottom: 7px solid black;
+          display: block;
+          width: 100%;
+          padding: 15px 35px;
+          background: white;
+          color: black; }
+        .selects-holder .select-holder .title .try_it_out a:active {
+          color: white;
+          background: black; }
 
 .portfolios-nav {
   position: fixed;
@@ -687,6 +686,7 @@ footer {
       transform: scale(1) !important;
   -webkit-transform: scale(1) !important;
   -moz-transform: scale(1) !important;
-  height: 90vh !important;
+  height: 85vh !important;
   width: 100vw !important;
-  opacity: 1 !important; }
+  opacity: 1 !important;
+  border-radius: 0 !important; }
