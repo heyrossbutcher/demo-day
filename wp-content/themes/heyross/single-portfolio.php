@@ -35,10 +35,10 @@
           <div class="info-holder-code js hide">
             <?php the_field('javascript_code');  //Get the JavaScript ?>
           </div>
-          <div class="info-holder-code html hide">
+          <div class="info-holder-code html_sp hide">
             <?php the_field('html_code');  //Get the HTML ?>
           </div>
-          <div class="info-holder-code css hide">
+          <div class="info-holder-code css_sp hide">
             <?php the_field('css');  //Get the CSS code ?>
           </div>
 

@@ -131,6 +131,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 html {
+  font-family: 'Lato', sans-serif;
   font-size: 62.5%; }
 
 .clearfix:after {
@@ -143,6 +144,11 @@ html {
 img {
   max-width: 100%;
   height: auto; }
+
+p {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85); }
 
 /* Global Classes / Wordpress Specific */
 .aligncenter {
@@ -194,7 +200,7 @@ a:hover {
 
 /* paragraphs */
 p {
-  line-height: 1.5; }
+  line-height: 1.8; }
 
 /*blockquotes*/
 blockquote {
@@ -492,13 +498,14 @@ p.form-allowed-tags, .nocomments {
 .main {
   width: 100%;
   height: 3840px;
-  background: mistyrose; }
+  background: #fff; }
 
 footer {
   width: 100%;
   height: 15vh;
   position: fixed;
   bottom: 0;
+  z-index: 1000;
   border: 2px solid black;
   background-color: black;
   color: white; }
@@ -515,6 +522,7 @@ footer {
   position: fixed;
   top: 150vh;
   left: 25vw;
+  z-index: 900;
   background: goldenrod;
   background-size: cover;
   background-repeat: no-repeat;
@@ -529,60 +537,86 @@ footer {
   -webkit-transition: all 1s cubic-bezier(0.73, -0.15, 0.32, 1.25);
   -moz-transition: all 1s cubic-bezier(0.73, -0.15, 0.32, 1.25); }
   .select-holder .wrap {
-    width: 45%; }
-    .select-holder .wrap .tech {
-      font-size: 1.4rem;
-      color: black;
-      padding: 7px 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.2);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      float: left; }
-      .select-holder .wrap .tech p {
-        margin: 0;
-        padding: 0; }
-      .select-holder .wrap .tech a {
-        color: black;
-        padding-bottom: 2px; }
-      .select-holder .wrap .tech a:hover {
-        border-bottom: 1px solid black; }
+    width: 45%;
+    position: relative; }
+  .select-holder .excerpt_on {
+    left: 0px; }
   .select-holder .excerpt {
-    font-size: 1.4rem;
+    position: absolute;
+    left: 0;
+    top: 10vh;
+    font-size: 1.2rem;
     line-height: 1.5;
     width: 100%;
     color: black;
     background: white;
-    border-top: 7px solid black;
     margin-top: 30px;
     margin-bottom: 5px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
-    padding: 30px;
-    float: left;
-    clear: both; }
+    padding: 30px; }
+    .select-holder .excerpt h3 {
+      font-family: 'Merriweather', serif;
+      font-size: 3.8rem;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 1.1;
+      letter-spacing: 0.25px;
+      color: rgba(0, 0, 0, 0.85);
+      margin: 0;
+      margin-bottom: 10px; }
     .select-holder .excerpt .e_text {
       float: left;
-      display: block;
-      padding-bottom: 15px; }
-  .select-holder .try_it_out {
-    margin-top: 15px; }
-    .select-holder .try_it_out a {
-      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
-      font-size: 1.8rem;
-      display: inline;
-      padding: 10px 28px;
-      color: white;
-      background: black;
+      margin-bottom: 15px; }
+    .select-holder .excerpt .tech_list {
       float: left;
-      display: block;
+      clear: both;
+      font-size: 1.2rem;
+      margin-bottom: 5px; }
+      .select-holder .excerpt .tech_list .tech_item {
+        float: left;
+        padding: 5px 20px; }
+      .select-holder .excerpt .tech_list .API {
+        color: #fff;
+        background: darkturquoise; }
+      .select-holder .excerpt .tech_list .CSS {
+        color: #fff;
+        background: lightslategray; }
+      .select-holder .excerpt .tech_list .Git {
+        color: #fff;
+        background: goldenrod; }
+      .select-holder .excerpt .tech_list .HTML5 {
+        color: #fff;
+        background: burlywood; }
+      .select-holder .excerpt .tech_list .JavaScript {
+        color: #fff;
+        background: steelblue; }
+      .select-holder .excerpt .tech_list .jQuery {
+        color: #fff;
+        background: chocolate; }
+      .select-holder .excerpt .tech_list .SASS {
+        color: #fff;
+        background: brown; }
+  .select-holder .try_it_out {
+    float: left;
+    clear: both;
+    margin-top: 15px; }
+    .select-holder .try_it_out .fa-chevron-right {
+      font-size: 1.2rem;
+      padding-left: 5px; }
+    .select-holder .try_it_out a {
+      font-size: 1.45rem;
+      display: inline-block;
+      padding: 5px 15px 5px 0;
+      color: black;
+      background: white;
+      float: left;
       transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.75s ease; }
     .select-holder .try_it_out a:hover {
-      border-bottom: 7px solid black;
-      display: block;
       width: 100%;
-      padding: 15px 35px;
-      background: white;
-      color: black; }
+      color: white;
+      background: black;
+      padding: 5px 15px; }
     .select-holder .try_it_out a:active {
       color: white;
       background: black; }
@@ -591,6 +625,7 @@ footer {
   position: fixed;
   top: 50%;
   right: 0;
+  z-index: 1100;
   -webkit-transform: translateY(-70%);
   -moz-transform: translateY(-70%);
   width: 10%; }
@@ -612,7 +647,7 @@ footer {
     -moz-transition: all 0.5s cubic-bezier(0.73, -0.45, 0.32, 1.95); }
     .portfolios-nav .portfolio-nav:hover {
       background: rgba(50, 50, 50, 0.5);
-      border: 8px solid white;
+      border: 7px solid white;
       -webkit-transform: scale(1.4);
           -ms-transform: scale(1.4);
               transform: scale(1.4);
@@ -620,7 +655,7 @@ footer {
 
 .current_state {
   background: rgba(250, 250, 250, 0.5) !important;
-  border: 8px solid white !important;
+  border: 7px solid white !important;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset !important;
   -webkit-transform: scale(1.2) !important;
       -ms-transform: scale(1.2) !important;
@@ -657,9 +692,9 @@ footer {
     background: pink; }
   .info-holder .js {
     background: yellow; }
-  .info-holder .html {
+  .info-holder .html_sp {
     background: red; }
-  .info-holder .css {
+  .info-holder .css_sp {
     background: blue; }
 
 .code-nav {
@@ -678,7 +713,7 @@ footer {
     border-right: none; }
 
 .hide {
-  opacity: 0 !important; }
+  display: none; }
 
 .current-selection {
   background: black;
@@ -705,3 +740,16 @@ footer {
 
 .moveDown {
   top: 150vh; }
+
+.key_instruct {
+  width: 100vw;
+  color: #fff;
+  position: fixed;
+  bottom: 25vh;
+  text-align: center; }
+
+.keys {
+  stroke-width: 1;
+  stroke: rgba(0, 0, 0, 0.15);
+  fill: rgba(0, 0, 0, 0.7); }
+

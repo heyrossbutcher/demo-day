@@ -73,8 +73,12 @@ info.move_on = function(the_piece, the_nav){
 	$(the_piece).addClass('scale');
 	//
 	$(the_nav).addClass('current_state');
+	//
 }
+info.fire_counter = 0;
+//
 info.move_up = function(the_piece, the_nav){
+
 	$(the_piece).addClass('moveUp');
 	$(the_piece).removeClass('moveOn');
 	$(the_piece).removeClass("moveDown");
@@ -91,44 +95,61 @@ info.move_down = function(the_piece, the_nav){
 	$(the_piece).removeClass('scale');
 	//
 	$(the_nav).removeClass('current_state');
+	//
 }
+// info.move_excerpt = function(the_piece){
+// 	var where_is_it = the_piece.position().top;
+// 	if (where_is_it == 0){
+// 		$(this + ' .excerpt').addClass('excerpt_on');
+// 	} else {
+// 		$(this + ' .excerpt').removeClass('excerpt_on');
+// 	}
+// }
+// info.move_the_excerpt = function(){
+// 	info.move_excerpt('piece2');
+// }
 //Hack to add the movinf functionality
 info.fire_piece = function(){
-	if( info.scrollPercent >= (0*info.scroll_divider) && info.scrollPercent <= (1*info.scroll_divider) ){
-		info.move_down('.piece1', '.nav1');
-		
 
-	} else if ( info.scrollPercent >= (0.75*info.scroll_divider) && info.scrollPercent <= (2*info.scroll_divider) ){
-			info.move_on('.piece1', '.nav1');
-			info.move_down('.piece2', '.nav2');
-			info.move_down('.piece3', '.nav3');
-			info.move_down('.piece4', '.nav4');
+		if( info.scrollPercent >= (0*info.scroll_divider) && info.scrollPercent <= (1*info.scroll_divider) ){
+				info.move_down('.piece1', '.nav1');
+				console.log('11111111111111111111');
 
-	} else if( info.scrollPercent >= (2*info.scroll_divider) && info.scrollPercent <= (3*info.scroll_divider) ){
-			info.move_up('.piece1', '.nav1');
-			info.move_on('.piece2', '.nav2');
-			info.move_down('.piece3', '.nav3');
-			info.move_down('.piece4', '.nav4');
-			
-	} else if( info.scrollPercent >= (3*info.scroll_divider) && info.scrollPercent <= (4*info.scroll_divider) ){
-			info.move_up('.piece1', '.nav1');
-			info.move_up('.piece2', '.nav2');
-			info.move_on('.piece3', '.nav3');
-			info.move_down('.piece4', '.nav4');
-			
-	} else if( info.scrollPercent >= (4*info.scroll_divider) && info.scrollPercent <= (5.25*info.scroll_divider) ){
-			info.move_up('.piece1', '.nav1');
-			info.move_up('.piece2', '.nav2');
-			info.move_up('.piece3', '.nav3');
-			info.move_on('.piece4', '.nav4');
-			
-	} if( info.scrollPercent >= (5.25*info.scroll_divider) && info.scrollPercent <= (6*info.scroll_divider) ){
-			info.move_up('.piece1', '.nav1');
-			info.move_up('.piece2', '.nav2');
-			info.move_up('.piece3', '.nav3');
-			info.move_up('.piece4', '.nav4');
-			
-	}	
+		} else if ( info.scrollPercent >= (0.75*info.scroll_divider) && info.scrollPercent <= (2*info.scroll_divider) ){
+				info.move_on('.piece1', '.nav1');
+				info.move_down('.piece2', '.nav2');
+				info.move_down('.piece3', '.nav3');
+				info.move_down('.piece4', '.nav4');
+				console.log('22222222222222222');
+
+		} else if( info.scrollPercent >= (2*info.scroll_divider) && info.scrollPercent <= (3*info.scroll_divider) ){
+				info.move_up('.piece1', '.nav1');
+				info.move_on('.piece2', '.nav2');
+				info.move_down('.piece3', '.nav3');
+				info.move_down('.piece4', '.nav4');
+				console.log('33333333333333333');
+
+		} else if( info.scrollPercent >= (3*info.scroll_divider) && info.scrollPercent <= (4*info.scroll_divider)  ){
+				info.move_up('.piece1', '.nav1');
+				info.move_up('.piece2', '.nav2');
+				info.move_on('.piece3', '.nav3');
+				info.move_down('.piece4', '.nav4');
+				console.log('444444444444444444');
+
+		} else if( info.scrollPercent >= (4*info.scroll_divider) && info.scrollPercent <= (5.25*info.scroll_divider)  ){
+				info.move_up('.piece1', '.nav1');
+				info.move_up('.piece2', '.nav2');
+				info.move_up('.piece3', '.nav3');
+				info.move_on('.piece4', '.nav4');
+				console.log('555555555555555555')
+				
+		} if( info.scrollPercent >= (5.25*info.scroll_divider) && info.scrollPercent <= (6*info.scroll_divider)  ){
+				info.move_up('.piece1', '.nav1');
+				info.move_up('.piece2', '.nav2');
+				info.move_up('.piece3', '.nav3');
+				info.move_up('.piece4', '.nav4');
+				console.log('666666666666')
+	}
 }
 //Create click functions for the side nav
 info.click_nav = function(p){
@@ -151,6 +172,41 @@ info.height_checker = function(p){
 	info.placer = (info.dh/info.scroll_divider_num) * (p);
 	$('html, body').animate( {scrollTop: info.placer + 'px'}, 750, 'swing' ); //Moves the div holding the portfolio pieces
 };
+//Goofy fun link and header stuff
+info.fun_links = [
+	'You know you want to...',
+	'What? Are you chicken?',
+	'I\'ll give you an After Eight!',
+	'Take your time, I can wait',
+	'Or not, it\'s a free country. :)',
+	'You\'re just one click away!',
+	'Successful people like to click.',
+	'9 out of 10 doctors recommend it.',
+	'Hope you like it!'
+];
+info.pick_link = function(){
+	$('.try_it_out a').on('mouseover', function(){
+		info.ranNum = Math.floor(Math.random()*info.fun_links.length);
+		$('.link_swap').html('Try it out  <i class="fa fa-chevron-right">' + ' ' + info.fun_links[info.ranNum]);
+	});
+	$('.try_it_out a').on('mouseout', function(){
+		$('.link_swap').html('Try it out  <i class="fa fa-chevron-right">');
+	});
+}
+// info.header_colour = [
+// 	'rgba(0,206,209,1)',
+// 	'rgba(119,136,153,1)',
+// 	'rgba(218,165,32,1)',
+// 	'rgba(222,184,135,1)',
+// 	'rgba(70,130,180,1)',
+// 	'rgba(210,105,30,1)',
+// 	'rgba(165,42,42,1)',
+// ];
+// info.pick_color = function(){
+// 	info.ranNumHead = Math.floor(Math.random()*info.header_colour.length);
+// 	$('.excerpt h3').css('color', info.header_colour[info.ranNumHead]);
+// }
+
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
@@ -174,6 +230,9 @@ $(function() {
 	//front page
 	info.get_scroll_data();
 	info.side_nav();
+	info.fire_piece();
+	//
+	info.pick_link();
 });
 //
 //
@@ -182,8 +241,9 @@ $(window).on('resize', function(){
 });
 //
 $(window).on('scroll', function(){
-	info.get_scroll_data();
 	info.fire_piece();
+	info.get_scroll_data();
+	// info.move_excerpt();
 	//
 });
 //FFFFFFFFFUUUUUUUUUUCCCCCCCCCCKKKKKKKKKKK!!!!!!!!!

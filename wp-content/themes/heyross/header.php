@@ -9,13 +9,18 @@
 
   <?php // Load our CSS ?>
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Merriweather:900,900italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <?php wp_head(); ?>
 </head>
 
 
 <body <?php body_class(); ?>>
-
+<!-- <video autoplay loop poster="polina.jpg" id="bgvid">
+<source src="polina.webm" type="video/webm">
+<source src="polina.mp4" type="video/mp4">
+</video> -->
 <header>
   <!-- <div class="container">
     <h1>
