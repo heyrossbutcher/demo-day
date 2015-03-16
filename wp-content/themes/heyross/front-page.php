@@ -21,6 +21,7 @@ get_header();  ?>
 
 				<path fill="rgba(255,255,255,0)" stroke-miterlimit="10" d="M168.3,85.4h-61.6c-6.6,0-12-5.4-12-12V13.2c0-6.6,5.4-12,12-12
 					h61.6c6.6,0,12,5.4,12,12v60.2C180.3,80,174.9,85.4,168.3,85.4z"/>
+
 					<polygon points="129.8,31.8 123.1,17.6 116,31.8 121.5,31.8 121.5,52.1 124.7,52.1 124.7,31.8 "/>
 
 				<g class="arrow_highlight">
@@ -42,15 +43,17 @@ get_header();  ?>
 		</svg>
 		
 		<div class="key_cta">
-			Press the arrow to begin
+			Press the arrow on the keyboard to begin
 		</div>
 
 	</div><!-- End of Key Instruct -->
-	<div class="aftereights remove clearfix">
 
+
+	<div class="aftereights remove clearfix">
+		
 		<svg width="15%" version="1.1" id="eights" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-			 viewBox="0 0 188 133" enable-background="new 0 0 188 133" xml:space="preserve">
-			 
+					 viewBox="0 0 188 133" enable-background="new 0 0 188 133" xml:space="preserve">
+					 
 			<g class="a_eights">
 				<polygon fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 					181.3,105.9 32.6,128.8 32.6,73.5 184,54.7 "/>
@@ -104,7 +107,7 @@ get_header();  ?>
 			Thanks for visiting. Enjoy an after Eight!
 		</div>
 
-	</div><!-- End of After Eights -->
+	</div> <!-- End of After Eights --> 
 
   <div class="container clearfix">
 		
@@ -138,21 +141,34 @@ get_header();  ?>
 							
 						<div class="tech_list">
 
-								<div class="tech_item used">
-									Built with:
-								</div>
-
+							<div class="tech_item used">
+								<?php 
+									if( $postid == '31'):
+										echo 'Skills include';
+									else:
+										echo 'Built in';
+									endif;
+								?>
+							</div>
+								
 			                    <?php $taxonomyItems = get_the_terms($post->ID, 'technologies');
 			                    // pre_r($taxonomyItems[4][1]);			
 			                    foreach ($taxonomyItems as $taxonomyItem) {
 			                      echo '<div class="tech_item '.$taxonomyItem->name.'">'.$taxonomyItem->name.'</div>';
 			                    }; ?>
 						</div>
+						
+						<?php if($postid !== 31) : ?>
 
-	                	<div class="try_it_out">
-	                		<a href="<?php echo get_permalink( $postid ); //Get Portfolio Piece Link ?>" target="blank">
-	                		<span class='link_swap'>View it live  <i class="fa fa-chevron-right"></span></i></a>
-                		</div>
+		                	<div class="try_it_out">
+		                		<a href="<?php echo get_permalink( $postid ); ?>" target="blank">
+		                			<span class='link_swap'>View it live  <i class="fa fa-chevron-right"></i></span>
+		                		</a>
+	                		</div>
+	                	<?php endif; ?>
+
+
+
 
 					</div><!-- End of excerpt -->
 

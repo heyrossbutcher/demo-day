@@ -103,7 +103,7 @@ info.fire_piece = function(){
 				info.move_down('.piece1', '.nav1');
 				info.click_temp = 0;
 				$('.key_instruct').removeClass('remove');
-				// $('.aftereights').addClass('remove');
+				$('.aftereights').addClass('remove');
 
 
 		} else if ( info.scrollPercent >= (0.75*info.scroll_divider) && info.scrollPercent <= (2*info.scroll_divider) ){
@@ -113,7 +113,7 @@ info.fire_piece = function(){
 				info.move_down('.piece4', '.nav4');
 				info.click_temp = 1;
 				$('.key_instruct').addClass('remove');
-				// $('.aftereights').addClass('remove');
+				$('.aftereights').addClass('remove');
 
 
 		} else if( info.scrollPercent >= (2*info.scroll_divider) && info.scrollPercent <= (3*info.scroll_divider) ){
@@ -133,7 +133,7 @@ info.fire_piece = function(){
 				info.move_down('.piece4', '.nav4');
 				info.click_temp = 3;
 				$('.key_instruct').addClass('remove');
-				// $('.aftereights').addClass('remove');
+				$('.aftereights').addClass('remove');
 
 		} else if( info.scrollPercent >= (4*info.scroll_divider) && info.scrollPercent <= (5.25*info.scroll_divider)  ){
 				info.move_up('.piece1', '.nav1');
@@ -142,7 +142,7 @@ info.fire_piece = function(){
 				info.move_on('.piece4', '.nav4');
 				info.click_temp = 4;
 				$('.key_instruct').addClass('remove');
-				// $('.aftereights').addClass('remove');
+				$('.aftereights').addClass('remove');
 
 		} if( info.scrollPercent >= (5.25*info.scroll_divider) && info.scrollPercent <= (6*info.scroll_divider)  ){
 				info.move_up('.piece1', '.nav1');
@@ -151,7 +151,7 @@ info.fire_piece = function(){
 				info.move_up('.piece4', '.nav4');
 				info.click_temp = 5;
 				$('.key_instruct').addClass('remove');
-				// $('.aftereights').removeClass('remove');
+				$('.aftereights').removeClass('remove');
 	}
 }
 //Create click functions for the side nav
@@ -176,7 +176,7 @@ info.height_checker = function(p){
 	info.placer = (info.dh/info.scroll_divider_num) * (p);
 	$('html, body').animate( {scrollTop: info.placer + 'px'}, 550, 'swing' ); //Moves the div holding the portfolio pieces
 };
-//Goofy fun link and header stuff
+// Goofy fun link and header stuff
 info.fun_links = [
 	'You know you want to...',
 	'What? Are you chicken?',
@@ -191,20 +191,13 @@ info.fun_links = [
 info.pick_link = function(){
 	$('.try_it_out a').on('mouseover', function(){
 		info.ranNum = Math.floor(Math.random()*info.fun_links.length);
-		$('.link_swap').html('Try it out  <i class="fa fa-chevron-right">' + ' ' + info.fun_links[info.ranNum]);
+		$('.link_swap').html('View it live  <i class="fa fa-chevron-right">' + ' <span class="easter_egg">' + info.fun_links[info.ranNum] + '</span>');
 	});
 	$('.try_it_out a').on('mouseout', function(){
-		$('.link_swap').html('Try it out  <i class="fa fa-chevron-right">');
+		$('.link_swap').html('View it live  <i class="fa fa-chevron-right">');
 	});
 }
-//
-info.click_checker = [0, 640, 1280, 1920, 2560, 2982 ];
-info.click_holder = 0;
-//
-//swap out video
 
-
-//
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
@@ -244,7 +237,6 @@ $(window).on('resize', function(){
 $(window).on('scroll', function(){
 	info.fire_piece();
 	info.get_scroll_data();
-	info.video_swap();
 	//
 });
 //FFFFFFFFFUUUUUUUUUUCCCCCCCCCCKKKKKKKKKKK!!!!!!!!!
@@ -252,12 +244,26 @@ info.find_scroll = function(i){
     $('html, body').animate( {scrollTop: info.click_checker[i] + 'px'}, 550, 'swing' );
 }
 // info.keydown = function(){
+//
+info.click_checker = [0, 640, 1280, 1920, 2560, 2982 ];
+info.click_holder = 0;
+//
 $(document).keydown(function(e) {
+	if(info.click_holder === 5 && e.which === 40) {
+		// info.click_holder = 5; 
+		return;
+	}
+
+	if(info.click_holder === 0 && e.which === 38) {
+		// info.click_holder = 0; 
+		return;
+	}
 	if( info.click_holder >= 0 && info.click_holder <= 5 ){
 			    switch(e.which) {
 			        case 40: // Down
-			        info.click_holder++	;
+			        info.click_holder++;
 			        info.find_scroll( info.click_holder  );
+			        break;
 
 			        break;
 
@@ -272,4 +278,3 @@ $(document).keydown(function(e) {
 		    e.preventDefault(); // prevent the default action (scroll / move caret)
 	}
 });
-// }

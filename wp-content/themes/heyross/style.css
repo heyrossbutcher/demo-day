@@ -529,7 +529,7 @@ p.form-allowed-tags, .nocomments {
   -webkit-transition: all 1.5s cubic-bezier(0.73, -0.15, 0.32, 1.25);
   -moz-transition: all 1.5s cubic-bezier(0.73, -0.15, 0.32, 1.25); }
   .select-holder .wrap {
-    width: 45%;
+    width: 40%;
     position: relative; }
   .select-holder .excerpt_on {
     left: 0px; }
@@ -544,7 +544,7 @@ p.form-allowed-tags, .nocomments {
     background: white;
     margin-top: 50px;
     margin-bottom: 15px;
-    padding: 30px 40px 30px 30px; }
+    padding: 30px 60px 30px 30px; }
     .select-holder .excerpt h3 {
       font-family: 'Merriweather', serif;
       font-size: 3.8rem;
@@ -596,21 +596,23 @@ p.form-allowed-tags, .nocomments {
     float: left;
     clear: both;
     margin-top: 15px; }
+    .select-holder .try_it_out .easter_egg {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.45rem;
+      color: white; }
     .select-holder .try_it_out .fa-chevron-right {
       font-size: 1.2rem;
       padding-left: 5px; }
     .select-holder .try_it_out a {
       font-size: 1.45rem;
       display: inline-block;
-      padding: 8px 15px 8px 0;
       color: black;
       background: white;
       float: left;
       transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
-      -moz-transition: all 0.75s ease; }
+      -moz-transition: all 0.3s ease; }
     .select-holder .try_it_out a:hover {
-      width: 100%;
       color: white;
       background: black;
       padding: 8px 15px; }
@@ -746,11 +748,9 @@ p.form-allowed-tags, .nocomments {
   z-index: 120;
   text-align: center;
   opacity: 1;
+  transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
-          transition: all 0.5s ease-in; }
-
-.remove {
-  opacity: 0; }
+  -moz-transition: all 0.5s ease-in; }
 
 .key_cta {
   font-family: 'Merriweather', serif;
@@ -767,9 +767,15 @@ p.form-allowed-tags, .nocomments {
 
 .arrow_highlight {
   fill: black;
-  animation: lightUp 6s infinite;
-  -moz-animation: lightUp 6s infinite;
-  -webkit-animation: lightUp 6s infinite; }
+  animation: lightUp 4s infinite;
+  -moz-animation: lightUp 4s infinite;
+  -webkit-animation: lightUp 4s infinite; }
+
+.no_arrow_highlight {
+  fill: rgba(0, 0, 0, 0.7);
+  animation: lightUp 4s infinite;
+  -moz-animation: lightUp 4s infinite;
+  -webkit-animation: lightUp 4s infinite; }
 
 @-webkit-keyframes lightUp {
   0% {
@@ -806,9 +812,9 @@ p.form-allowed-tags, .nocomments {
 .direct_arrows {
   fill: black;
   stroke: black;
-  animation: reverse_it 6s infinite;
-  -moz-animation: reverse_it 6s infinite;
-  -webkit-animation: reverse_it 6s infinite; }
+  animation: reverse_it 4s infinite;
+  -moz-animation: reverse_it 4s infinite;
+  -webkit-animation: reverse_it 4s infinite; }
 
 @-webkit-keyframes reverse_it {
   0% {
@@ -860,13 +866,17 @@ p.form-allowed-tags, .nocomments {
   z-index: 120;
   text-align: center;
   opacity: 1;
+  transition: all 0.5s ease-in;
   -webkit-transition: all 0.5s ease-in;
-          transition: all 0.5s ease-in; }
+  -moz-transition: all 0.5s ease-in; }
 
 .a_eights {
   stroke-width: 0.5;
   stroke: rgba(0, 0, 0, 0.5);
   fill: rgba(0, 0, 0, 0.7); }
+
+.remove {
+  opacity: 0; }
 
 footer {
   width: 100%;

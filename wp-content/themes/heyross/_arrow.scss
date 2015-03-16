@@ -1,4 +1,5 @@
 //ARROW STYLES
+
 .key_instruct{
   width: 100vw;
   color: #fff;
@@ -8,32 +9,34 @@
   text-align: center;
   opacity:1;
   transition: all 0.5s ease-in;
-
-}
-
-.remove{
-	opacity:0;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
 }
 .key_cta{
-    font-family: 'Merriweather', serif;
-    // font-weight: 900;
-    font-style: italic;
-	font-size: 1.5rem;
-	letter-spacing: -0.2px;		
-	margin-top: 20px;
-	// text-transform: uppercase;
-	color: rgba(0,0,0,0.25);
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  letter-spacing: -0.2px;   
+  margin-top: 20px;
+  color: rgba(0,0,0,0.25);
 }
+
 .keys{
   stroke-width: 0.5;
   stroke: rgba(0,0,0,0.5);
   fill: rgba(0,0,0,0.7)
 }
 .arrow_highlight{
-	fill: rgba(0,0,0,1);
-  animation: lightUp 6s infinite ;
-  -moz-animation: lightUp 6s infinite ;
-	-webkit-animation: lightUp 6s infinite ;
+  fill: rgba(0,0,0,1);
+  animation: lightUp 4s infinite ;
+  -moz-animation: lightUp 4s infinite ;
+  -webkit-animation: lightUp 4s infinite ;
+}
+.no_arrow_highlight{
+  fill: rgba(0,0,0,0.7);
+  animation: lightUp 4s infinite ;
+  -moz-animation: lightUp 4s infinite ;
+  -webkit-animation: lightUp 4s infinite ;
 }
 
 @-webkit-keyframes lightUp {
@@ -52,11 +55,11 @@
 }
 
 .direct_arrows{
-	fill: rgba(0,0,0,1);
-	stroke: rgba(0,0,0,1);	
-  animation: reverse_it 6s infinite ;
-  -moz-animation: reverse_it 6s infinite ;
-	-webkit-animation: reverse_it 6s infinite ;
+  fill: rgba(0,0,0,1);
+  stroke: rgba(0,0,0,1);  
+  animation: reverse_it 4s infinite ;
+  -moz-animation: reverse_it 4s infinite ;
+  -webkit-animation: reverse_it 4s infinite ;
 }
 @-webkit-keyframes reverse_it {
   0%   { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
@@ -82,10 +85,16 @@
   text-align: center;
   opacity:1;
   transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
 
 }
 .a_eights{
   stroke-width: 0.5;
   stroke: rgba(0,0,0,0.5);
   fill: rgba(0,0,0,0.7)
+}
+
+.remove{
+	opacity:0;
 }
