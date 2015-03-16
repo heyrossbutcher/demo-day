@@ -3,15 +3,89 @@
   width: 100vw;
   color: #fff;
   position: fixed;
-  bottom: 25vh;
-  // left: 0;
+  bottom: 20vh;
+  z-index: 120;
   text-align: center;
+  opacity:1;
+  transition: all 0.5s ease-in;
+
+}
+
+.remove{
+	opacity:0;
+}
+.key_cta{
+    font-family: 'Merriweather', serif;
+    // font-weight: 900;
+    font-style: italic;
+	font-size: 1.5rem;
+	letter-spacing: -0.2px;		
+	margin-top: 20px;
+	// text-transform: uppercase;
+	color: rgba(0,0,0,0.25);
 }
 .keys{
-  stroke-width: 1;
-  stroke: rgba(0,0,0,0.15);
+  stroke-width: 0.5;
+  stroke: rgba(0,0,0,0.5);
   fill: rgba(0,0,0,0.7)
 }
-.arrows{
-  // height: 25%;
+.arrow_highlight{
+	fill: rgba(0,0,0,1);
+  animation: lightUp 6s infinite ;
+  -moz-animation: lightUp 6s infinite ;
+	-webkit-animation: lightUp 6s infinite ;
+}
+
+@-webkit-keyframes lightUp {
+  0%   { fill: rgba(0,0,0,0); }
+  25% { fill: rgba(0,0,0,0); }
+  50% { fill: rgba(0,0,0,0.7); }
+  75% { fill: rgba(0,0,0,0); }
+  100%   { fill: rgba(0,0,0,0); }
+}
+@keyframes lightUp {
+  0%   { fill: rgba(0,0,0,0); }
+  25% { fill: rgba(0,0,0,0); }
+  50% { fill: rgba(0,0,0,0.7); }
+  75% { fill: rgba(0,0,0,0); }
+  100%   { fill: rgba(0,0,0,0); }
+}
+
+.direct_arrows{
+	fill: rgba(0,0,0,1);
+	stroke: rgba(0,0,0,1);	
+  animation: reverse_it 6s infinite ;
+  -moz-animation: reverse_it 6s infinite ;
+	-webkit-animation: reverse_it 6s infinite ;
+}
+@-webkit-keyframes reverse_it {
+  0%   { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+  25% { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+  50% { fill: rgba(255,255,255,1); stroke: rgba(255,255,255,1); }
+  75% { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+  100%   { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+}
+@keyframes reverse_it {
+  0%   { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+  25% { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+  50% { fill: rgba(255,255,255,1); stroke: rgba(255,255,255,1); }
+  75% { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+  100%   { fill: rgba(0,0,0,1); stroke: rgba(0,0,0,1); }
+}
+//After Eights
+.aftereights{
+  width: 100vw;
+  color: #fff;
+  position: fixed;
+  bottom: 20vh;
+  z-index: 120;
+  text-align: center;
+  opacity:1;
+  transition: all 0.5s ease-in;
+
+}
+.a_eights{
+  stroke-width: 0.5;
+  stroke: rgba(0,0,0,0.5);
+  fill: rgba(0,0,0,0.7)
 }

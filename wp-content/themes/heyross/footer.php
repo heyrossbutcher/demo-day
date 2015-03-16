@@ -1,6 +1,31 @@
 <footer>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+	<div class="home_link">
+		<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+		    <?php bloginfo( 'name' ); ?>
+		</a>
+	</div>
+	
+		<?php //we are going to pull in the latest portfolio pieces ?>
+		<?php $latestPosts = new wp_query(array(
+			'post_type' => 'social',//we only want portfolio pieces
+			'posts_per_page' => -1
+		)) ?>
+		
+		<div class="social">
+			<div class="social_btns call">
+				You can reach him here:				
+			</div>
+			<?php if($latestPosts->have_posts()) while($latestPosts->have_posts()) : $latestPosts->the_post() ?>
+
+				<div class="social_btns <?php the_field('which_social');  //Assign the class ?>">
+					<a href="<?php the_field('link_to');  //put the link ?>" target="blank">
+						<?php the_field('font_awesome_link');  //Get the icon ?>
+					</a>
+				</div>
+				
+			<?php endwhile; ?><!-- //end custom loop -->
+		</div>
   </div>
 </footer>
 
