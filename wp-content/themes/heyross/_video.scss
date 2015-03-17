@@ -10,17 +10,10 @@ background: none;
 	overflow: hidden;
 }
 
-// video#bgvidin {
-// 	min-width: 100%; min-height: 100%;
-// 	width: 100vw; height: 100vh; z-index: 100;
-// 	background: url(http://localhost:8888/Demo-day/wp-content/themes/heyross/img/intro.jpg) no-repeat;
-// 	background-size: cover;
-//     background-position: center; 
-// }
 .vid_holder video#bgvidin {
 	position: fixed;
       // object-fit: contain;
       // object-fit: fill;
-      object-fit: cover;
+      -webkit-object-fit: cover;
       width:100%;
     }

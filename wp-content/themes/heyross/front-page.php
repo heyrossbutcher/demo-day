@@ -6,6 +6,43 @@
 
 get_header();  ?>
 
+
+<div class="mobile_header hide">
+	<img src="<?php bloginfo( 'template_url' ); ?>/img/title.jpg" alt="">
+</div>
+
+<div class="mobile_contact hide">
+	<div class="open">
+		<i class="fa fa-bars"></i> Contact
+	</div>
+	<div class="mobile_contact_items hide">
+			<div class="mobile_contact_item">
+				<a href="tel:6476686850">(647) 668-6850</a>
+			</div>	
+			<div class="mobile_contact_item">
+				<a href="mailto:heyross@rossbutcher.ca?subject=Hey ">Email</a>
+			</div>	
+		<!--  -->
+		<?php $latestPosts = new wp_query(array(
+			'post_type' => 'social',//we only want social pieces
+			'posts_per_page' => -1
+		)) ?>
+		<!--  -->
+
+		<?php if($latestPosts->have_posts()) while($latestPosts->have_posts()) : $latestPosts->the_post() ?>
+			<div class="mobile_contact_item">
+				<a href="<?php the_field('link_to');  //put the link ?>" target="blank">
+					<?php the_field('which_social');  //Assign the class ?>
+				</a>
+			</div>
+		<?php endwhile; ?><!-- //end custom loop -->
+
+		</div>
+
+
+	</div>
+</div>
+
 <div class="vid_holder">
 	<video autoplay loop poster="<?php bloginfo( 'template_url' ); ?>/img/intro.jpg" id="bgvidin">
 	  <source src="<?php bloginfo( 'template_url' ); ?>/img/intro.mp4" type="video/mp4">
@@ -14,7 +51,7 @@ get_header();  ?>
 <div class="main">
 	<div class="key_instruct remove clearfix">
 
-		<svg width="15%" version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 274.3 178.2" enable-background="new 0 0 274.3 178.2" xml:space="preserve">
 
 			<g class="keys">
@@ -51,7 +88,7 @@ get_header();  ?>
 
 	<div class="aftereights remove clearfix">
 		
-		<svg width="15%" version="1.1" id="eights" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		<svg version="1.1" id="eights" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					 viewBox="0 0 188 133" enable-background="new 0 0 188 133" xml:space="preserve">
 					 
 			<g class="a_eights">
@@ -123,7 +160,7 @@ get_header();  ?>
 	<?php //LOAD IN THE PORTFOLIO PIECES ?>
 		<?php $image = get_field('screenshot');  //Get the image for processing ?>
 
-		<div class="select-holder piece<?php the_field('nav_select');  ?>" style="background-image: url(<?php echo $image['sizes']['portfolio']; //Print the screenshot?>)">
+		<div class="select-holder clearfix piece<?php the_field('nav_select');  ?>" style="background-image: url(<?php echo $image['sizes']['portfolio']; //Print the screenshot?>)">
 
             <?php //pre_r($post); ?>
 		    
@@ -163,14 +200,6 @@ get_header();  ?>
 		                	<div class="try_it_out">
 		                		<a href="<?php the_field('link'); ?>" target="_">
 		                			<span class='link_swap'>View it live  <i class="fa fa-chevron-right"></i></span>
-		                		</a>
-	                		</div>
-
-	                		<?php else: ?>
-								
-		                	<div class="try_it_out">
-		                		<a href="<?php the_field('link'); ?>" target="_">
-		                			<span class='link_swap'>Check it out  <i class="fa fa-chevron-right"></i></span>
 		                		</a>
 	                		</div>
 

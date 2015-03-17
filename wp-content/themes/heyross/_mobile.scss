@@ -1,0 +1,23 @@
+.mobile_header{
+	// height:300px;
+}
+.mobile_contact{
+	font-size: 1.4rem;
+    font-family: 'Merriweather', serif;
+	color: rgba(0,0,0,0.35);
+	background: rgba(255,255,255,1);
+	border-top: 1px solid rgba(0,0,0,0.05);
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+	.open{
+		text-align: left;
+		padding: 15px 10px;
+	}
+	i{
+		padding-right: 10px;
+	}
+	.mobile_contact_items{
+		font-size: 1.4rem;
+		padding: 8px 10px 8px 40px;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
+	}
+}

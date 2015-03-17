@@ -5,7 +5,15 @@
 		    <?php bloginfo( 'name' ); ?>
 		</a>
 	</div>
-	
+	<div class="credentials">
+		<strong>Email: </strong><a href="mailto:heyross@rossbutcher.ca?subject=Hey ">heyross@rossbutcher.ca</a><div class="divider">|</div><strong>Call: </strong> 647.668.6850
+	</div>
+	<div class="sml_credentials hide">
+		<div class="stack"><strong>Email: </strong><a href="mailto:heyross@rossbutcher.ca?subject=Hey ">heyross@rossbutcher.ca</a></div>
+		<div class="stack"><strong>Call: </strong> 647.668.6850</div>
+	</div>
+
+
 		<?php //we are going to pull in the latest portfolio pieces ?>
 		<?php $latestPosts = new wp_query(array(
 			'post_type' => 'social',//we only want portfolio pieces
@@ -13,9 +21,6 @@
 		)) ?>
 		
 		<div class="social">
-			<div class="social_btns call">
-				You can reach me here				
-			</div>
 			<?php if($latestPosts->have_posts()) while($latestPosts->have_posts()) : $latestPosts->the_post() ?>
 
 				<div class="social_btns <?php the_field('which_social');  //Assign the class ?>">

@@ -16,14 +16,38 @@ footer{
 }
 .home_link{
   font-family: 'Merriweather', serif;
-  font-size: 2.5rem;
-  padding: 0 30px;
-  width: 50%;
+  font-size: 2.1rem;
+  padding-left: 30px;
+  width: 30%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   a {
     color: rgba(0,0,0,0.7);;
+  }
+}
+.credentials{
+  font-size: 1.6rem;
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: rgba(0,0,0,0.65);
+  a{
+    color: rgba(0,0,0,0.65);
+    text-decoration: none;
+    &:hover{
+      color: rgba(0,0,0,0.45);
+    }
+  }
+  strong{
+    font-family: 'Merriweather', serif;
+  }
+  .divider{
+    padding: 0 20px;
+    display: inline;
   }
 }
 .social{
@@ -32,43 +56,48 @@ footer{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right:20px;
-  .social_btns{
+  right:0px;
+  width: 15%;
+  .social_btns{/////////////////////////////////
     float: left;
-    // font-size: 3.25rem;
+    // width: 100%;
     padding-right: 15px;
+      font-size: 3rem;
   }
-  .call{
-    padding-top: 10px;
-      font-size: 1.3rem;
+  .call{///////////////
+    font-family: 'Lato', sans-serif;
+    float: left;
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: 1.3rem;
+    letter-spacing: 0.1px;
+  }
+  .Email a{
+    color: rgba(165,42,42,1);
+    &:hover{
+      color: #666;
     }
-    .Email a{
-      font-size: 3rem;
-      color: rgba(165,42,42,1);
-      &:hover{
-        color: #666;
-      }
+  }
+  .GitHub a{
+    font-size: 4rem;
+    color: rgba(218,165,32,1);
+    &:hover{
+      color: #666;
     }
-    .GitHub a{
-      font-size: 3rem;
-      color: rgba(218,165,32,1);
-      &:hover{
-        color: #666;
-      }
+  }
+  .Twitter a{
+    font-size: 4rem;
+    color: rgba(70,130,180,1);
+    &:hover{
+      color: #666;
     }
-    .Twitter a{
-      font-size: 3rem;
-      color: rgba(70,130,180,1);
-      &:hover{
-        color: #666;
-      }
 
+  }
+  .LinkedIn a{
+    font-size: 4rem;
+    color: rgba(155,89,182,1);
+    &:hover{
+      color: #666;
     }
-    .LinkedIn a{
-      font-size: 3rem;
-      color: rgba(155,89,182,1);
-      &:hover{
-        color: #666;
-      }
-    }
+  }
 }

@@ -57,6 +57,7 @@ info.setInfomenu = function(){
 /////////////////////////////////////////////////////////////
 //Get all the viewport and scroll data
 info.get_scroll_data = function(){
+	info.ww = $(window).width();
 	info.wh = $(window).height();
 	info.st = $(window).scrollTop();
     info.dh = $(document).height();
@@ -99,11 +100,13 @@ info.move_down = function(the_piece, the_nav){
 }
 //Hack to add the movinf functionality
 info.fire_piece = function(){
+	if (info.ww > 640){
 		if( info.scrollPercent >= (0*info.scroll_divider) && info.scrollPercent <= (1*info.scroll_divider) ){
 				info.move_down('.piece1', '.nav1');
 				info.click_temp = 0;
 				$('.key_instruct').removeClass('remove');
 				$('.aftereights').addClass('remove');
+				console.log('hit me baby one more time 1')
 				return;
 
 
@@ -115,6 +118,7 @@ info.fire_piece = function(){
 				info.click_temp = 1;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
+				console.log('hit me baby one more time 2')
 				return;
 
 
@@ -126,6 +130,7 @@ info.fire_piece = function(){
 				info.click_temp = 2;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
+				console.log('hit me baby one more time 3')
 				return;
 				
 
@@ -160,6 +165,7 @@ info.fire_piece = function(){
 				return;
 	}
 }
+}
 //Create click functions for the side nav
 info.click_nav = function(p){
 	$('.nav'+ p).on('click', function(){
@@ -185,7 +191,6 @@ info.height_checker = function(p){
 // Goofy fun link and header stuff
 info.fun_links = [
 	'You know you want to...',
-	'What? Are you chicken?',
 	'I\'ll give you an After Eight!',
 	'Take your time, I can wait',
 	'Or not, it\'s a free country. :)',
@@ -238,17 +243,20 @@ $(function() {
 //
 $(window).on('resize', function(){
 	info.get_scroll_data();
+	info.fire_piece();
+	console.log('Screen Width: ' + info.ww)
 });
 //
 $(window).on('scroll', function(){
-	info.fire_piece();
 	info.get_scroll_data();
-	console.log(info.st + '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+	info.fire_piece();
+	// console.log(info.st + '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 	//
 });
 //FFFFFFFFFUUUUUUUUUUCCCCCCCCCCKKKKKKKKKKK!!!!!!!!!
 info.find_scroll = function(i){
     $('html, body').animate( {scrollTop: info.click_checker[i] + 'px'}, 550, 'swing' );
+
 }
 // info.keydown = function(){
 //
@@ -284,4 +292,9 @@ $(document).keydown(function(e) {
 			    }
 		    e.preventDefault(); // prevent the default action (scroll / move caret)
 	}
+});
+
+//Reveal Mobile Menu
+$('.open').on('click', function() {
+	$('.mobile_contact_items').toggleClass('hide');
 });
