@@ -6,12 +6,12 @@
 
 get_header();  ?>
 
+<div class="vid_holder">
+	<video autoplay loop poster="<?php bloginfo( 'template_url' ); ?>/img/intro.jpg" id="bgvidin">
+	  <source src="<?php bloginfo( 'template_url' ); ?>/img/intro.mp4" type="video/mp4">
+	</video>	
+</div>
 <div class="main">
-	<!-- <div class="vid_holder"> -->
-		<video autoplay loop poster="<?php bloginfo( 'template_url' ); ?>/img/intro.jpg" id="bgvidout">
-		  <source src="<?php bloginfo( 'template_url' ); ?>/img/intro//.mp4" type="video/mp4">
-		</video>	
-	<!-- </div> -->
 	<div class="key_instruct remove clearfix">
 
 		<svg width="15%" version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -161,11 +161,21 @@ get_header();  ?>
 						<?php if($postid !== 31) : ?>
 
 		                	<div class="try_it_out">
-		                		<a href="<?php echo get_permalink( $postid ); ?>" target="blank">
+		                		<a href="<?php the_field('link'); ?>" target="_">
 		                			<span class='link_swap'>View it live  <i class="fa fa-chevron-right"></i></span>
 		                		</a>
 	                		</div>
+
+	                		<?php else: ?>
+								
+		                	<div class="try_it_out">
+		                		<a href="<?php the_field('link'); ?>" target="_">
+		                			<span class='link_swap'>Check it out  <i class="fa fa-chevron-right"></i></span>
+		                		</a>
+	                		</div>
+
 	                	<?php endif; ?>
+						
 
 
 

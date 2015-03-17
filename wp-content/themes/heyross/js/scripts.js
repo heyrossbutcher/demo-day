@@ -104,6 +104,7 @@ info.fire_piece = function(){
 				info.click_temp = 0;
 				$('.key_instruct').removeClass('remove');
 				$('.aftereights').addClass('remove');
+				return;
 
 
 		} else if ( info.scrollPercent >= (0.75*info.scroll_divider) && info.scrollPercent <= (2*info.scroll_divider) ){
@@ -114,6 +115,7 @@ info.fire_piece = function(){
 				info.click_temp = 1;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
+				return;
 
 
 		} else if( info.scrollPercent >= (2*info.scroll_divider) && info.scrollPercent <= (3*info.scroll_divider) ){
@@ -123,7 +125,8 @@ info.fire_piece = function(){
 				info.move_down('.piece4', '.nav4');
 				info.click_temp = 2;
 				$('.key_instruct').addClass('remove');
-				// $('.aftereights').addClass('remove');
+				$('.aftereights').addClass('remove');
+				return;
 				
 
 		} else if( info.scrollPercent >= (3*info.scroll_divider) && info.scrollPercent <= (4*info.scroll_divider)  ){
@@ -134,6 +137,7 @@ info.fire_piece = function(){
 				info.click_temp = 3;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
+				return;
 
 		} else if( info.scrollPercent >= (4*info.scroll_divider) && info.scrollPercent <= (5.25*info.scroll_divider)  ){
 				info.move_up('.piece1', '.nav1');
@@ -143,6 +147,7 @@ info.fire_piece = function(){
 				info.click_temp = 4;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
+				return;
 
 		} if( info.scrollPercent >= (5.25*info.scroll_divider) && info.scrollPercent <= (6*info.scroll_divider)  ){
 				info.move_up('.piece1', '.nav1');
@@ -152,6 +157,7 @@ info.fire_piece = function(){
 				info.click_temp = 5;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').removeClass('remove');
+				return;
 	}
 }
 //Create click functions for the side nav
@@ -237,6 +243,7 @@ $(window).on('resize', function(){
 $(window).on('scroll', function(){
 	info.fire_piece();
 	info.get_scroll_data();
+	console.log(info.st + '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 	//
 });
 //FFFFFFFFFUUUUUUUUUUCCCCCCCCCCKKKKKKKKKKK!!!!!!!!!

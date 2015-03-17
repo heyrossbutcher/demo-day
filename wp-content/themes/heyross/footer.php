@@ -14,7 +14,7 @@
 		
 		<div class="social">
 			<div class="social_btns call">
-				You can reach him here:				
+				You can reach me here				
 			</div>
 			<?php if($latestPosts->have_posts()) while($latestPosts->have_posts()) : $latestPosts->the_post() ?>
 
