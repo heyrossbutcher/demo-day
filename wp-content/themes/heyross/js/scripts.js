@@ -106,7 +106,7 @@ info.fire_piece = function(){
 				info.click_temp = 0;
 				$('.key_instruct').removeClass('remove');
 				$('.aftereights').addClass('remove');
-				console.log('hit me baby one more time 1')
+				// console.log('00000000000000');
 				return;
 
 
@@ -118,7 +118,7 @@ info.fire_piece = function(){
 				info.click_temp = 1;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
-				console.log('hit me baby one more time 2')
+				// console.log('11111111111111');
 				return;
 
 
@@ -130,7 +130,7 @@ info.fire_piece = function(){
 				info.click_temp = 2;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
-				console.log('hit me baby one more time 3')
+				// console.log('222222222222222');
 				return;
 				
 
@@ -142,6 +142,7 @@ info.fire_piece = function(){
 				info.click_temp = 3;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
+				// console.log('33333333333333');
 				return;
 
 		} else if( info.scrollPercent >= (4*info.scroll_divider) && info.scrollPercent <= (5.25*info.scroll_divider)  ){
@@ -152,6 +153,7 @@ info.fire_piece = function(){
 				info.click_temp = 4;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').addClass('remove');
+				// console.log('444444444444444');
 				return;
 
 		} if( info.scrollPercent >= (5.25*info.scroll_divider) && info.scrollPercent <= (6*info.scroll_divider)  ){
@@ -162,6 +164,7 @@ info.fire_piece = function(){
 				info.click_temp = 5;
 				$('.key_instruct').addClass('remove');
 				$('.aftereights').removeClass('remove');
+				// console.log('5555555555555');
 				return;
 	}
 }
@@ -244,15 +247,14 @@ $(function() {
 $(window).on('resize', function(){
 	info.get_scroll_data();
 	info.fire_piece();
-	console.log('Screen Width: ' + info.ww)
 });
 //
 $(window).on('scroll', function(){
 	info.get_scroll_data();
 	info.fire_piece();
-	// console.log(info.st + '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 	//
 });
+
 //FFFFFFFFFUUUUUUUUUUCCCCCCCCCCKKKKKKKKKKK!!!!!!!!!
 info.find_scroll = function(i){
     $('html, body').animate( {scrollTop: info.click_checker[i] + 'px'}, 550, 'swing' );
@@ -261,30 +263,26 @@ info.find_scroll = function(i){
 // info.keydown = function(){
 //
 info.click_checker = [0, 640, 1280, 1920, 2560, 2982 ];
-info.click_holder = 0;
 //
 $(document).keydown(function(e) {
-	if(info.click_holder === 5 && e.which === 40) {
-		// info.click_holder = 5; 
+	if(info.click_temp === 5 && e.which === 40) {
 		return;
 	}
 
-	if(info.click_holder === 0 && e.which === 38) {
-		// info.click_holder = 0; 
+	if(info.click_temp === 0 && e.which === 38) {
 		return;
 	}
-	if( info.click_holder >= 0 && info.click_holder <= 5 ){
+	if( info.click_temp >= 0 && info.click_temp <= 5 ){
 			    switch(e.which) {
 			        case 40: // Down
-			        info.click_holder++;
-			        info.find_scroll( info.click_holder  );
+			        info.click_temp++;
+			        info.find_scroll( info.click_temp );
 			        break;
 
-			        break;
 
 			        case 38: // Up
-			        info.click_holder--;
-			        info.find_scroll( info.click_holder  );
+			        info.click_temp--;
+			        info.find_scroll( info.click_temp );
 			        break;
 
 			        default:

@@ -170,7 +170,7 @@ get_header();  ?>
 
 					<div class="excerpt clearfix">
 
-						<h3><?php the_field('project_title');  //Project title ?> </h3>
+						<h3><a href="<?php the_field('link'); ?>" target="-"><?php the_field('project_title');  //Project title ?></a></h3>
 
 						<div class="e_text">
 							<p><?php the_field('excerpt_description');  //Get the image ?></p>
@@ -200,6 +200,11 @@ get_header();  ?>
 		                	<div class="try_it_out">
 		                		<a href="<?php the_field('link'); ?>" target="_">
 		                			<span class='link_swap'>View it live  <i class="fa fa-chevron-right"></i></span>
+		                		</a>
+	                		</div>
+	                		<div class="mobile_try_it_out hide">
+		                		<a href="<?php the_field('link'); ?>" target="_">
+		                			View it live  <i class="fa fa-chevron-right"></i>
 		                		</a>
 	                		</div>
 

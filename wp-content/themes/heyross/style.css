@@ -515,7 +515,7 @@ p.form-allowed-tags, .nocomments {
   top: 150vh;
   left: 25vw;
   z-index: 900;
-  background: goldenrod;
+  background: white;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -552,6 +552,8 @@ p.form-allowed-tags, .nocomments {
       color: rgba(0, 0, 0, 0.85);
       margin: 0;
       margin-bottom: 10px; }
+      .select-holder .excerpt h3 a {
+        color: rgba(0, 0, 0, 0.85); }
     .select-holder .excerpt .e_text {
       float: left;
       margin-bottom: 25px; }
@@ -590,6 +592,19 @@ p.form-allowed-tags, .nocomments {
       .select-holder .excerpt .tech_list .WordPress {
         color: #fff;
         background: #9b59b6; }
+  .select-holder .mobile_try_it_out {
+    float: left;
+    clear: both;
+    margin-top: 25px;
+    background: black;
+    padding: 8px 15px; }
+    .select-holder .mobile_try_it_out .fa-chevron-right {
+      font-size: 1.2rem;
+      padding-left: 5px; }
+    .select-holder .mobile_try_it_out a {
+      color: white; }
+      .select-holder .mobile_try_it_out a:hover {
+        color: rgba(255, 255, 255, 0.6); }
   .select-holder .try_it_out {
     float: left;
     clear: both;
@@ -983,32 +998,59 @@ footer {
   -webkit-object-fit: cover;
   width: 100%; }
 
+@media (max-height: 650px) {
+  .vid_holder video#bgvidin {
+    width: 100%;
+    left: 50%;
+    top: -15%;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%); } }
+
+@media (max-height: 600px) {
+  .vid_holder video#bgvidin {
+    width: 80%;
+    top: -35%; }
+  svg {
+    width: 10%; } }
+
+@media (max-height: 500px) {
+  .vid_holder video#bgvidin {
+    top: -35%; }
+  svg {
+    width: 10%; } }
+
 @media (max-width: 1280px) {
   .key_instruct {
-    bottom: 30vh; }
+    bottom: 20vh; }
   .aftereights {
-    bottom: 30vh; }
+    bottom: 20vh; }
   svg {
-    width: 20%; } }
+    width: 15%; }
+  .vid_holder video#bgvidin {
+    width: 120%;
+    left: 50%;
+    top: 0;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%); } }
 
 @media (max-width: 1200px) {
   .credentials {
     width: 50%; }
   .key_instruct {
-    bottom: 30vh; }
+    bottom: 20vh; }
   .aftereights {
-    bottom: 30vh; }
+    bottom: 20vh; }
   .select-holder .wrap {
     width: 55%; }
+  svg {
+    width: 15%; }
   .vid_holder video#bgvidin {
-    width: 110%;
-    background-repeat: no-repeat;
-    position: fixed;
-    left: 50%;
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%); } }
+    width: 120%;
+    left: 50%; } }
 
 @media (max-width: 1050px) {
   .home_link {
@@ -1021,9 +1063,9 @@ footer {
   .social {
     width: 25%; }
   .key_instruct {
-    bottom: 35vh; }
+    bottom: 20vh; }
   .aftereights {
-    bottom: 35vh; }
+    bottom: 20vh; }
   .vid_holder video#bgvidin {
     width: 130%; }
   .key_cta {
@@ -1033,13 +1075,14 @@ footer {
   .home_link {
     width: 25%; }
   .vid_holder video#bgvidin {
-    width: 140%; }
+    width: 160%;
+    top: 0; }
   .key_instruct {
-    bottom: 35vh; }
+    bottom: 20vh; }
   .aftereights {
-    bottom: 35vh; }
+    bottom: 20vh; }
   svg {
-    width: 25%; }
+    width: 20%; }
   .sml_credentials {
     display: block;
     position: absolute;
@@ -1087,6 +1130,10 @@ footer {
     background-size: 10% 10%;
     background: #fff; }
   .portfolios-nav, .key_instruct, .aftereights {
+    display: none; }
+  .mobile_try_it_out {
+    display: block; }
+  .try_it_out {
     display: none; }
   .select-holder {
     position: static;
@@ -1152,7 +1199,21 @@ footer {
       color: #fff;
       background: rgba(0, 0, 0, 0.4); }
   footer {
-    display: none; } }
+    display: none; }
+  .piece1 {
+    background-position: -200px -185px;
+    background-size: 150%; }
+  .piece2 {
+    background-position: -120px -255px; }
+  .piece3 {
+    background-position: -120px -200px; }
+  .piece4 {
+    background-position: -220px -150px; } }
+
+@media (max-width: 500px) {
+  .piece1 {
+    background-position: -200px -100px;
+    background-size: 150%; } }
 
 @media (max-width: 400px) {
   .select-holder .excerpt {
@@ -1163,4 +1224,12 @@ footer {
     font-size: 1.6rem; }
   .mobile_contact_items .mobile_contact_item a, .mobile_contact_items .non_link {
     font-size: 1.2rem;
-    padding: 15px 10px 15px 35px; } }
+    padding: 15px 10px 15px 35px; }
+  .piece1 {
+    background-position: -150px -80px;
+    background-size: 150%; } }
+
+@media (max-width: 320px) {
+  .piece1 {
+    background-position: -150px -40px;
+    background-size: 150%; } }
